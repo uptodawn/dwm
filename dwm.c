@@ -1058,6 +1058,8 @@ manage(Window w, XWindowAttributes *wa)
 		c->y = c->mon->wy + c->mon->wh - HEIGHT(c);
 	c->x = MAX(c->x, c->mon->wx);
 	c->y = MAX(c->y, c->mon->wy);
+	c->w = MIN(c->w, c->mon->ww);
+	c->h = MIN(c->h, c->mon->wh);
 	c->bw = borderpx;
 
 	wc.border_width = c->bw;
